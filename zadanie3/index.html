@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title> abc </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="pokazCzas();">
+<div id="glowny">
+<div class="zegar" id="zegarA"> Zegar tyka, tyka...</div> 
+<div class="zegar" id="zegarB"></div> <br>
+<div class="pojemnik" id="pojemnikA"> Do wakacji </div> <div class="pojemnik" id="pojemnikB"> Do egzaminu zawodowego </div> <div class="pojemnik" id="pojemnikC"> Do nowego roku szkolnego </div> <br>
+<div class="pojemnikDNI" id="pojemnikdniA"> licznik wakacij </div> <div class="pojemnikDNI" id="pojemnikdniB"> licznik egzaminu </div> <div class="pojemnikDNI" id="pojemnikdniC"> licznik do nowego roku szkolnego <div>
+</div>
+<script>
+var data=new Date();
+var wakacje=new Date(2020, 06, 27);
+var pojemnikdniA=wakacje-data;
+var dni=Math.floor(pojemnikdniA/(1000*60*60*24));
+var egzamin=new Date(2020, 06, 22);
+var pojemnikdniB=egzamin-data;
+var dni2=Math.floor(pojemnikdniB/(1000*60*60*24));
+var szkola=new Date(2020, 09, 01);
+var pojemnikdniC=szkola-data;
+var dni3=Math.floor(pojemnikdniC/(1000*60*60*24));
+rok=data.getFullYear(); // 1000-9999
+godzina=data.getHours(); // bieżąca godzina na komputerze
+minuta=data.getMinutes(); // minuty
+dzien=data.getDate();
+miesiac=data.getMonth()+1; // miesiące (0-11)
+sekunda=data.getSeconds(); // sekundy
+document.getElementById("zegarB").innerHTML = dzien+"."+miesiac+"."+rok+"<br>"+godzina+"."+minuta+"."+sekunda;
+document.getElementById("pojemnikdniA").innerHTML = dni+" dni";
+document.getElementById("pojemnikdniB").innerHTML = dni2+" dni";
+document.getElementById("pojemnikdniC").innerHTML = dni3+" dni";
+</script>
+</body>
+</html>
